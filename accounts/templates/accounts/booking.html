@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+            <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+    <title>Booking Page</title>
+</head>
+<body>
+<h1>Booking Page</h1>
+<form class="site-form" action="/accounts/login/" method="POST">
+    {% csrf_token %}
+    {{form.non_field_errors}}
+
+    <div class="field_wrapper">
+        {{form.patient_name.errors}}
+        <label for="{{form.patient_name.id_for_label}}">Patient Name:</label>
+        {{form.patient_name}}
+    </div>
+
+    <div class="field_wrapper">
+        {{form.ph_no.errors}}
+        <label for="{{ form.ph_no.id_for_label }}">Phone No:</label>
+        {{form.ph_no}}
+    </div>
+
+    <br><br>
+    <select name="dropdown1">
+    {% for hos in h %}
+    <option value="{{hos.hospital_name}}">{{hos.hospital_name}}</option>
+    {% endfor %}
+    </select>
+    <select name="dropdown2">
+    {% for dos in d%}
+    <option value="{{dos.departments}}">{{dos.departments}}</option>
+    {% endfor %}
+    </select>
+    <select name="dropdown3">
+    {% for docs in doc%}
+    <option value="{{docs.doctor_name}}">{{docs.doctor_name}}</option>
+    {% endfor %}
+    </select>
+    <select name="dropdown4">
+    {% for timings in timing %}
+    <option value="{{timings.time_available}}">{{timings.time_available}}</option>
+    {% endfor %}
+    </select><br>
+    <button type="submit" value="Book Now">BookNow</button>
+</form>
+</body>
+</html>

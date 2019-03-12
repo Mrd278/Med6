@@ -1,0 +1,289 @@
+{% load static %}
+<! DOCTYPE html>
+<html lang="en">
+ {% csrf_token %}
+    <head>
+    <!-- META TAGS -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta http-equiv="refresh" content="300"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="MED-6 Because health matters">
+        <meta name="keywords" content="HTML,CSS,Javascript,Python,Django,PHP,Jquery,Bootstrap">
+        <meta name="author" content="Harshit Bargujar,Mridul Gupta,Sachin Bhola, Amay Kumar,Mukesh Gaur, Aamir Saifi">
+        <meta name="robots" content="index, follow"/>
+        <meta name="language" content="english"/>
+
+
+    <!--LINKS-->
+        <link rel="shortcut icon" href="{%static 'images/favicon.jpeg' %}" type="image/x-icon" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+        <link rel="stylesheet" href="{%static 'css/style.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+        <script type="text/javascript" src="{%static 'js/main.js' %}"></script>
+
+            <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <title>MED-6 | Because Health Matters</title>
+    </head>
+    <body>
+        <!--        PRELOADER       -->
+        <div class="loader">
+            <img src="{%static 'images/loading.gif' %}" alt="Loading..." />
+        </div>
+
+
+        <!--        NAVIGATION      -->
+        <div id="navbar">
+            <a href="#header"><span class="navbar__items">HOME</span></a>
+            <a href="#aboutus"><span class="navbar__items">About us</span></a>
+            <a href="#footer"><span class="navbar__items">contact</span></a>
+            <a style="float: right" href="#popup"><span class="navbar__items-right">login</span></a>
+            <a style="float: right" href="signup"><span class="navbar__items-right">signup</span></a>
+        </div>
+
+
+        <!--        HEADER      -->
+        <header class="header" id="header">
+            <div class="header__overlay-box">
+                <img src="{% static 'images/Banner Overlay Edit.png' %}" alt="Overlay" class="header__overlay">
+            </div>
+            <div class="header__text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary--main">med-6</span>
+                    <span class="heading-primary--sub">because health matters</span>
+                </h1>
+            </div>
+        </header>
+
+
+        <!--        FORM        -->
+        <div class="popup" id="popup">
+            <div class="popup__content">
+                <div class="popup__right">
+                    <a href="#section-tours" class="popup__close">&times;</a>
+                </div>
+                <section class="section-book">
+                    <div class="row">
+                        <div class="book" background="{% static 'images/booking_image.jpg' %}">
+                            <div class="book__form">
+                                <form action="#" class="form" method="post">
+                                    <div class="u-margin-bottom-small">
+                                        <h2 class="heading-secondary">
+                                            login
+                                        </h2>
+                                    </div>
+                                    <div class="form__group">
+                                         {% csrf_token %}
+                                        {{form}}
+                                    </div>
+                                    <div class="form__group">
+                                        <button type="submit" class="btn btn--green u-center-text">Login</button>
+                                        <h3>New User <a href="signup/">Sign Up Here</a> </h3>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+        <!--        MAIN        -->
+        <main>
+            <section class="section-about" id="aboutus">
+                <div class="u-center-text u-margin-bottom-big">
+                    <h2 class="heading-secondary">
+                        Service offered by us
+                    </h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-1-of-2">
+                        <h3 class="heading-tertiary u-margin-bottom-small">We provide best Doctors across the globe </h3>
+                        <p class="paragraph">
+                            We consist of a team of verified doctors who are always ready to help you ,we provide options like <STRONG>chat, video conferencing, and pre booking which we call Token6 </STRONG> .You have access of best doctors at your door steps.
+                        </p>
+
+                        <h3 class="heading-tertiary u-margin-bottom-small">We save your time by revolutionary Token6 </h3>
+                        <p class="paragraph">
+                            Miles Davis rightly said-"Time isn't the main thing it is the only thing".Well, we save your precious time by providing you tokens or virtual appointment directly to the docter from where you can monitor waiting time and patients in queue before you so you can directly reach clinic or hospital on the given time ,which means no more waiting in line and a life streamline.
+                        </p>
+
+                        <a href="#booknow" class="btn-text">Book now!</a>
+                    </div>
+                    <div class="col-1-of-2">
+                        <div class="composition">
+                            <img src="{%static 'images/doctor_with_laptop.jpg' %}" alt="Photo 1" class="composition__photo composition__photo--p1">
+                            <img src="{%static 'images/doctor_with_patiet.jpg' %}" alt="Photo 2" class="composition__photo composition__photo--p2">
+                            <img src="{%static 'images/doctor_report.png' %}" alt="Photo 3" class="composition__photo composition__photo--p3">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--        BOOKING SECTION     -->
+
+
+            <section class="section-booking" id="booknow">
+                <h2 class="u-center-text u-margin-bottom-small heading-secondary-two">make an appointment</h2>
+                <div class="book__form">
+                                <form action="#" class="form">
+                                    <div class="booking__form" id="s1">
+
+                                    <div class="form__group">
+                                        <input class="form__input" type="text" id="s2" name="" placeholder="Username" required>
+
+                                    <div class="form__group">
+                                        <input class="form__input"  type="text" id="s3" placeholder="Phone number" required>
+                                    </div>
+                                    <div class="form__group">
+                                        <input class="form__input" type="date" id="s4" required>
+                                    </div>
+                                    <div class="form__group">
+                                        <input class="form__input" type="time" id="s5"  required>
+                                    </div>
+                                        <select class="form__input" id="s6">
+                                            <option>hospital</option>
+                                        </select>
+                                        <select class="form__input" id="s7">
+                                            <option>department</option>
+                                        </select>
+                                        <select class="form__input" id="s8">
+                                            <option>doctor</option>
+                                        </select><br>
+                                        <button class="btn btn--blue u-center-text  u-margin-bottom-small" id="btn-big">BOOK</button>
+                                    </div>
+                                    </div>
+                                </form>
+                            </div>
+            </section>
+
+
+            <!--        SECTION STORIES     -->
+
+            <section class="section__stories">
+                <div class="bg-video">
+                    <video class="bg-video__content" autoplay muted loop>
+                        <source src="{% static 'images/video.mp4' %}" type="video.mp4">
+                        <source src="{% static 'images/video.webm' %}" type="video.mp4">
+                        your browser is not supported
+                    </video>
+                </div>
+
+                <div class="u-center-text u-margin-bottom-big">
+                    <h2 class="heading-secondary">
+                        we make people genuinely happy
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="story">
+                        <figure class="story__shape">
+                            <img src="{% static 'images/profile1.jpeg' %}" alt="doctors review" class="story__img">
+                            <figcaption class="story__caption">Mansi Gupta</figcaption>
+                        </figure>
+                        <div class="story__text">
+                            <h3 class="heading-tertiary u-margin-bottom-small">
+                                This site is a blessing for me
+                            </h3>
+                            <p>
+                                I have been using this app for around a month to book appointments for my granny how is suffering from Osteoporosis .There one of a kind TOKEN system really saves a lot of time.<strong> Med-6</strong> always lives up to my expectations ,smooth interface, genuine service ,excellent custumer support.Keep it up Med6.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="story">
+                        <figure class="story__shape">
+                            <img src="{%static 'images/profile2.jpg'%}" alt="person review" class="story__img">
+                            <figcaption class="story__caption">Jack Sparrow</figcaption>
+                        </figure>
+                        <div class="story__text">
+                            <h3 class="heading-tertiary u-margin-bottom-small">
+                                wow my life is completely different now
+                            </h3>
+                            <p>
+                                I was suffering from tonsils but due to heavy work load i couldn't visit my doctor. This was a perfect solution ,i met Dr Mehra who not only solved my problem but also saveed my time by giving an online appointment. i a highly satisfied and appriciate efforts of Med6 and team.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="u-center-text u-margin-top-huge">
+                    <a href="#" class="btn btn-text">read all stories &rarr;</a>
+                </div>
+                 <div id="mybuttonn">
+                     <a href="/medchat/"><button class="feedbackk"><img class="sz" src="{%static 'images/chat.png'%}"> </button></a>
+</div>
+            </section>
+
+
+
+        </main>
+<!--
+
+        <div id="mybutton">
+<button class="feedback">Feedback</button>
+</div>
+-->
+
+
+
+        <!--        FOOTER      -->
+        <footer class="footer" id="footer">
+            <div class="footer__logo-box">
+                <img src="{%static 'images/thapalogo.png'%}" alt="Full logo" class="footer__logo">
+            </div>
+            <div class="row">
+                <div class="col-1-of-2">
+                    <div class="footer__navigation">
+                        <ul class="footer__list">
+                            <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Contact us</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Carrers</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Privacy policy</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+                        </ul>
+                    </div>
+                    <div class="middle">
+                        <a class="btn-footer-icons" target="_blank" href="https://www.facebook.com">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="btn-footer-icons" target="_blank" href="https://twitter.com">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="btn-footer-icons" target="_blank" href="https://www.google.com">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a class="btn-footer-icons" target="_blank" href="https://www.instagram.com">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="btn-footer-icons" target="_blank" href="https://www.youtube.com">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-1-of-2">
+                    <p class="footer__copyright">
+                        Built by <a href="#" class="footer__link">HARSHIT BARGUJAR AND TEAM </a> for his hackathon <a href="#"
+                            class="footer__link">MED-6</a>.
+                        Copyright &copy; by Harshit Bargujar. You are 100% allowed to use this webpage for both personal
+                        and commercial use, but NOT to claim it as your own design. A credit to the original author, Harshit
+                        Bargujar, is of course highly appreciated!
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
